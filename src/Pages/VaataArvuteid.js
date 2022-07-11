@@ -1,6 +1,14 @@
 function VaataArvuteid() {
+    const margid = localStorage.getItem('margid');
+    const mudelid = localStorage.getItem('mudelid');
+    const maksumused = localStorage.getItem('maksumused');
+    
     return ( 
-        <div>Vaata arvuteid</div>
+        <div>
+            <div>{margid}</div>
+            <div>{mudelid}</div>
+            <div>{maksumused}</div>
+        </div>
      );
 }
 

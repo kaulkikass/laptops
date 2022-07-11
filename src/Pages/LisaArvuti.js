@@ -9,10 +9,24 @@ function LisaArvuti() {
 
     const addProduct = () => {
         setMessage('Arvuti lisatud');
-        console.log(markRef.current.value);
-        localStorage.setItem('mark', markRef.current.value);
-        localStorage.setItem('mudel', mudelRef.current.value);
-        localStorage.setItem('maksumus', maksumusRef.current.value);
+        
+        let margid = localStorage.getItem('margid');
+        margid = JSON.parse(margid) || [];
+        margid.push(markRef.current.value);
+        margid = JSON.stringify(margid);
+        localStorage.setItem('margid', margid);
+
+        let mudelid = localStorage.getItem('mudelid');
+        mudelid = JSON.parse(mudelid) || [];
+        mudelid.push(mudelRef.current.value);
+        mudelid = JSON.stringify(mudelid);
+        localStorage.setItem('mudelid', mudelid);
+
+        let maksumused = localStorage.getItem('maksumused');
+        maksumused = JSON.parse(maksumused) || [];
+        maksumused.push(maksumusRef.current.value);
+        maksumused = JSON.stringify(maksumused);
+        localStorage.setItem('maksumused', maksumused);
 
     }
 
